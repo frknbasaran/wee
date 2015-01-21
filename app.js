@@ -103,7 +103,8 @@ app.get('/', function(req, res) {
                         {"content":"derya"},
                         {"content":"8"}
                     ]
-                ]
+                ],
+                className: "table-striped"
             }
         });
 });

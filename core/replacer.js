@@ -43,24 +43,22 @@ tableMaker: function (items, className) {
     if (typeof className === "undefined") {
        output += "<table class='table'>";
     } else {
-       output += "<table class='" + className + "'>";
+       output += "<table class='table " + className + "'>";
     }
     
     for (var i = 0; i < items.length; i++) {
-        
-        output += (i == 0) ? "<th>" : "<tr>";
+        output += (i == 0) ? "<thead>" : "<tr>";
         
         for (var j = 0; j < items[i].length; j++) {
-            output += "<td>" + items[i][j].content + "</td>";
+            output += (i == 0) ? "<td><strong>" + items[i][j].content + "</strong></td>" : "<td>" + items[i][j].content + "</td>" ;
         }
         
-        output += (i == 0) ? "</th>" : "</tr>";
+        output += (i == 0) ? "</thead>" : "</tr>";
     }
     
     output += "</table>";
     
     return output;
-    
 }
 
 
