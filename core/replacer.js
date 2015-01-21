@@ -1,3 +1,9 @@
+/*
+@project: wee
+@desc: tiny & cute template engine for express
+@author: Furkan BAŞARAN <frknbasaran@gmail.com>
+@version: 1.0.0
+*/
 module.exports = {
 
 /* 
@@ -6,7 +12,7 @@ list maker method
 @className String
 @showCount Boolean 
 */
-listMaker: function (items, className, showCount) {
+listMaker: function (items, className, showCount, isLink) {
     
     var output = "";
     
@@ -18,16 +24,18 @@ listMaker: function (items, className, showCount) {
     
     if (!showCount || typeof showCount === "undefined") {
         for (var i = 0; i < items.length; i++) {
-            output += "<li class='list-group-item'>" + items[i].content + "</li>";
+            if(isLink) output += "<a href='" + items[i].href + "'><li class='list-group-item'>" + items[i].content + "</li></a>";
+            else output += "<li class='list-group-item'>" + items[i].content + "</li>";
         }
     } else {
         for (var i = 0; i < items.length; i++) {
-            output += "<li class='list-group-item'><span class='badge'>" + items[i].count + "</span>" + items[i].content + "</li>";
+            if(isLink) output += "<a href='" + items[i].href + "'><li class='list-group-item'><span class='badge'>" + items[i].count + "</span>" + items[i].content + "</li></a>";
+            else output += "<li class='list-group-item'><span class='badge'>" + items[i].count + "</span>" + items[i].content + "</li>";
         }
     }
 
     output += "</ul>";
-
+    console.log(isLink)
     return output;
 },
     
@@ -59,8 +67,39 @@ tableMaker: function (items, className) {
     output += "</table>";
     
     return output;
+},
+/*
+html form maker method
+*/
+formMaker: function (action, method, fields, id_prefix) {
+
+    var output = "";
+
+    output += "<form action='" + action + "' method='" + method +"'>";
+
+    for (var i = 0; i < fields.length; i++) {
+        switch (fields[i].type) {
+            case 0:
+                if(fields[i].req && id_prefix !== "undefined") output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='text' name='"+fields[i].name+"' id='"+id_prefix+fields[i].name+"' required></div>";
+                else if(fields[i].req) output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='text' name='"+fields[i].name+"' required></div>";
+                else output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='text' name='"+fields[i].name+"'></div>";
+                break;
+            case 1:
+                if(fields[i].req && id_prefix !== "undefined") output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='email' name='"+fields[i].name+"' id='"+id_prefix+fields[i].name+"' required></div>";
+                else if(fields[i].req) output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='email' name='"+fields[i].name+"' required></div>";
+                else output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='email' name='"+fields[i].name+"'></div>";
+                break;
+            case 2:
+                if(fields[i].req && id_prefix !== "undefined") output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='password' name='"+fields[i].name+"' id='"+id_prefix+fields[i].name+"' required></div>";
+                else if(fields[i].req) output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input type='password' class='form-control' name='"+fields[i].name+"' required></div>";
+                else output += "<div class='form-group'><label for='"+fields[i].name+"'>"+fields[i].name+"</label><input class='form-control' type='password' name='"+fields[i].name+"'></div>";
+                break;
+           }
+    }
+
+    output += "<input type='submit' class='btn btn-default' value='Submit'></form>";
+
+    return output;
 }
-
-
 };
 
