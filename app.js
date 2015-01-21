@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var fs = require('fs');
+var replacer = require('./core/replacer');
 
 var app = express();
 
@@ -11,34 +12,7 @@ app.set('view engine', 'wee');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-/* 
-list maker method
-@items Array
-@className String
-@showCount Boolean 
-*/
-var listMaker = function(items, className, showCount) {
-    
-    var output = "";
-    
-    if (typeof className === "undefined") {
-        output += "<ul class=''>";
-    }
 
-    if (!showCount || typeof showCount === "undefined") {
-        for (var i = 0; i < items.length; i++) {
-            output += "<li class='list-group-item'>" + items[i].content + "</li>";
-        }
-    } else {
-        for (var i = 0; i < items.length; i++) {
-            output += "<li class='list-group-item'><span class='badge'>" + items[i].count + "</span>" + items[i].content + "</li>";
-        }
-    }
-
-    output += "</ul>";
-
-    return output;
-}
  
 app.engine('wee', function (filePath, options, callback) { 
   
@@ -52,8 +26,16 @@ app.engine('wee', function (filePath, options, callback) {
     var matches;
     
     while(matches = regex.exec(pure)) {
-        pure = pure.replace(matches[0], listMaker(options[matches[1]].items, options[matches[1]].className, options[matches[1]].showCount));
-        console.log("vayla girdi");
+        pure = pure.replace(matches[0], replacer.listMaker(options[matches[1]].items, options[matches[1]].className, options[matches[1]].showCount));
+        console.log("list vayla girdi");
+    }
+      
+    var regex = /\*\*table +([\S]+)/g;
+    var matches;
+    
+    while(matches = regex.exec(pure)) {
+        pure = pure.replace(matches[0], replacer.tableMaker(options[matches[1]].items, options[matches[1]].className));
+        console.log("teybıl vayla girdi");
     }
 
     console.log(pure);
@@ -91,6 +73,37 @@ app.get('/', function(req, res) {
                 ], 
                 className:"zaaaxDamnanananamasdjashd", 
                 showCount:false
+            },
+            table0: 
+            {
+                items:
+                [
+                    [
+                        {"content":"ad"},
+                        {"content":"soyad"},
+                        {"content":"no"}
+                    ],
+                    [
+                        {"content":"furkan"},
+                        {"content":"başaran"},
+                        {"content":"5"}
+                    ],
+                    [
+                        {"content":"fatma"},
+                        {"content":"açar"},
+                        {"content":"6"}
+                    ],
+                    [
+                        {"content":"kadir"},
+                        {"content":"yaka"},
+                        {"content":"7"}
+                    ],
+                    [
+                        {"content":"doğan"},
+                        {"content":"derya"},
+                        {"content":"8"}
+                    ]
+                ]
             }
         });
 });
