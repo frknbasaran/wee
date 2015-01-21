@@ -1,11 +1,38 @@
 {
   "name": "wee",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node app"
+  "description": "twitter bootstrap based html helper for express",
+  "version": "1.0.4",
+  "author": {
+    "name": "Furkan Başaran",
+    "email": "frknbasaran@gmail.com"
   },
+  "keywords": ["express","view","template","engine","html","helper","server-side", "template engine","light"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frknbasaran/wee"
+  },
+  "license": "MIT",
   "dependencies": {
     "express": "~4.11.0"
-  }
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/frknbasaran/wee/issues"
+  },
+  "homepage": "https://github.com/frknbasaran/wee",
+  "_id": "wee@1.0.4",
+  "scripts": {},
+  "_npmUser": {
+    "name": "frknbasaran",
+    "email": "frknbasaran@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "frknbasaran",
+      "email": "frknbasaran@gmail.com"
+    }
+  ],
+  "directories": {}
 }
