@@ -142,7 +142,17 @@ var table = {
                 ],
                 className: "table-striped"
             };
+        
+        app.get('/', function (req, res) {
+        	res.render('index', {myTable:myTable});
+        });
 ```
 
-    
+* **items**: {Object Array}:
+    * **content** : {String} text 
+* **className**: {String} spesific css class selector
+
+*After render progress html ouput looks like below*
+
+![alt](http://s15.postimg.org/k0pvsvz6j/Screenshot_2015_01_22_13_46_14.png)
 
