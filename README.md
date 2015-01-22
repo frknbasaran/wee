@@ -152,7 +152,97 @@ var table = {
     * **content** : {String} text 
 * **className**: {String} spesific css class selector
 
+```
+<!doctype html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div style="margin-top:100px"></div>
+	<div class="row">
+		<div class="col-md-4">
+		    // for list type we must write '**list' pre-declaration
+			**table myTable
+		</div>
+	</div>
+</div>
+</body>
+</html>
+```
+
 *After render progress html ouput looks like below*
 
 ![alt](http://s15.postimg.org/k0pvsvz6j/Screenshot_2015_01_22_13_46_14.png)
+
+###Form
+
+Declare again in main app file
+
+```
+var form = {
+	"action":"/register",
+        "method":"POST",
+        "fields": [
+		{"name":"username","type":0,"req":true},
+		{"name":"email","type":1,"req":true},
+		{"name":"password","type":2,"req":true}
+        ],
+        "id_prefix":"item"
+}
+
+app.get('/', function(req, res) {
+    res.render('index', {myForm:myForm});
+});
+```
+
+* **action:** {String} target url
+* **method:** {String} http request type
+* **fields:** {Object Array}
+	* **name:** {String} field name
+	* **type:** {Number} input type
+		* **0:** generate text type input
+		* **1:** generate email type input
+		* **2:** generate password type input
+	* **req:** {Boolean} field required status
+* **id_prefix:** {String} this property will add id attribute to input like this : **id_prefix** + **name**
+
+```
+<!doctype html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div style="margin-top:100px"></div>
+	<div class="row">
+		<div class="col-md-4">
+		    // for list type we must write '**list' pre-declaration
+			**form myForm
+		</div>
+	</div>
+</div>
+</body>
+</html>
+```
+
+Rendered output looks like below:
+
+http://s30.postimg.org/onrhljfyp/Screenshot_2015_01_22_14_08_43.png
+
+
 
