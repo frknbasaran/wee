@@ -1,12 +1,22 @@
 {
   "name": "wee",
   "description": "twitter bootstrap based html helper for express",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "name": "Furkan Başaran",
     "email": "frknbasaran@gmail.com"
   },
-  "keywords": ["express","view","template","engine","html","helper","server-side", "template engine","light"],
+  "keywords": [
+    "express",
+    "view",
+    "template",
+    "engine",
+    "html",
+    "helper",
+    "server-side",
+    "template engine",
+    "light"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/frknbasaran/wee"
@@ -34,5 +44,10 @@
       "email": "frknbasaran@gmail.com"
     }
   ],
-  "directories": {}
+  "directories": {},
+  "readme": "# wee\ntiny &amp; cute template engine for express\n\nOn development\n",
+  "readmeFilename": "README.md",
+  "gitHead": "b0adb29d2dfb96a53ade22277ec0792be77db27d",
+  "_shasum": "f53bec3b098046544d84fae8f1a3552ea8ef9833",
+  "_from": "wee@"
 }
