@@ -1,8 +1,8 @@
 # Wee
 *Twitter Bootstrap Based HTML Helper for Express*
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
+	[![NPM Version][npm-image]][npm-url]
+	[![NPM Downloads][downloads-image]][downloads-url]
 
 ##Requirements
 
@@ -247,5 +247,7 @@ Rendered output looks like below:
 
 [Table](http://s30.postimg.org/onrhljfyp/Screenshot_2015_01_22_14_08_43.png)
 
+[npm-image]: https://img.shields.io/npm/v/express.svg?style=flat
+[npm-url]: https://npmjs.org/package/wee
 
 
