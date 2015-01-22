@@ -247,7 +247,7 @@ Rendered output looks like below:
 
 [Table](http://s30.postimg.org/onrhljfyp/Screenshot_2015_01_22_14_08_43.png)
 
-[npm-image]: https://img.shields.io/npm/v/express.svg?style=flat
+[npm-image]: https://img.shields.io/npm/v/wee.svg?style=flat
 [npm-url]: https://npmjs.org/package/wee
 [downloads-url]: https://npmjs.org/package/wee
 [downloads-image]: https://img.shields.io/npm/dm/wee.svg?style=flat
