@@ -242,7 +242,7 @@ app.get('/', function(req, res) {
 
 Rendered output looks like below:
 
-http://s30.postimg.org/onrhljfyp/Screenshot_2015_01_22_14_08_43.png
+[Table](http://s30.postimg.org/onrhljfyp/Screenshot_2015_01_22_14_08_43.png)
 
 
 
