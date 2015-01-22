@@ -1,6 +1,9 @@
 # Wee
 *Twitter Bootstrap Based HTML Helper for Express*
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+
 ##Requirements
 
 You need only two thing for getting start with wee.
