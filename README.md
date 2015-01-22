@@ -249,5 +249,6 @@ Rendered output looks like below:
 
 [npm-image]: https://img.shields.io/npm/v/express.svg?style=flat
 [npm-url]: https://npmjs.org/package/wee
-
+[downloads-url]: https://npmjs.org/package/wee
+[downloads-image]: https://img.shields.io/npm/dm/wee.svg?style=flat
 
