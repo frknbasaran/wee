@@ -245,7 +245,10 @@ app.get('/', function(req, res) {
 
 Rendered output looks like below:
 
-[Table](http://s30.postimg.org/onrhljfyp/Screenshot_2015_01_22_14_08_43.png)
+![Table](http://s30.postimg.org/onrhljfyp/Screenshot_2015_01_22_14_08_43.png)
+
+If you have an idea or find error please entry issue. 
+Thanks
 
 [npm-image]: https://img.shields.io/npm/v/wee.svg?style=flat
 [npm-url]: https://npmjs.org/package/wee
