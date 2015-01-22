@@ -1,8 +1,8 @@
 # Wee
 *Twitter Bootstrap Based HTML Helper for Express*
 
-	[![NPM Version][npm-image]][npm-url]
-	[![NPM Downloads][downloads-image]][downloads-url]
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
 
 ##Requirements
 
