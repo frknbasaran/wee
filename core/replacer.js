@@ -2,7 +2,7 @@
  * @module replacer
  * author : Furkan BAŞARAN <frknbasaran@gmail.com>
  *
- * tiny & cute template engine for express
+ * twitter bootstrap based html helper for express
  *
  * @return {Object}
  */
